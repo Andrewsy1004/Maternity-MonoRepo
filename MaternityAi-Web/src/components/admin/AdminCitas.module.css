@@ -1,0 +1,357 @@
+.root {
+  min-height: 100vh;
+  width: 100%;
+  background: #f5f5f5;
+  font-family: 'Segoe UI', sans-serif;
+  box-sizing: border-box;
+}
+
+/* ── CONTENIDO debajo del header ── */
+.grid {
+  display: grid;
+  grid-template-columns: 230px 1fr;
+  gap: 14px;
+  align-items: start;
+  padding: 20px 28px;
+}
+
+/* ── PANELS ── */
+.panel {
+  background: white;
+  border-radius: 18px;
+  padding: 20px 18px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+}
+.panelTitle {
+  color: #CA436E;
+  font-size: 17px;
+  font-weight: 600;
+  margin: 0 0 12px;
+}
+
+/* ── SEARCH ── */
+.searchWrap {
+  position: relative;
+  margin-bottom: 12px;
+}
+.searchInput {
+  width: 100%;
+  padding: 8px 12px 8px 32px;
+  border-radius: 20px;
+  border: 1px solid #e0e0e0;
+  background: #f9f9f9;
+  font-size: 12px;
+  color: #555;
+  font-family: inherit;
+  outline: none;
+  box-sizing: border-box;
+}
+.searchIcon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* ── PACIENTE LIST ── */
+.pList {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.pItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.pItem:hover { background: #f5f5f5; }
+.pItemSel    { background: #fce8ef; }
+.pId         { font-weight: 600; font-size: 12px; color: #CA436E; min-width: 65px; }
+.pDetail     { font-size: 11px; color: #999; }
+
+/* ── PAGINACIÓN LISTA MATERNAS ── */
+.paginacion {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #f0f0f0;
+}
+.paginacionBtn {
+  background: #f0f0f0;
+  color: #555;
+  border: none;
+  border-radius: 14px;
+  padding: 5px 10px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s;
+}
+.paginacionBtn:hover:not(:disabled) { background: #e6e6e6; }
+.paginacionBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.paginacionInfo {
+  font-size: 11px;
+  color: #888;
+  white-space: nowrap;
+}
+
+/* ── CAL PANEL HEADER ── */
+.calPanelHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+.calTitulo {
+  color: #CA436E;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+}
+.newCitaBtn {
+  background: #CA436E;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 9px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: opacity 0.2s;
+}
+.newCitaBtn:hover { opacity: 0.88; }
+
+/* ── CAL LAYOUT ── */
+.calLayout {
+  display: grid;
+  grid-template-columns: 1fr 220px;
+  gap: 20px;
+  align-items: start;
+}
+
+/* ── CAL NAV ── */
+.calNav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+.calNavLeft {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.calMes {
+  font-size: 16px;
+  font-weight: 600;
+  color: #222;
+}
+.navBtn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #888;
+  padding: 0 4px;
+  line-height: 1;
+}
+.vistaToggle {
+  display: flex;
+  background: #f0f0f0;
+  border-radius: 20px;
+  padding: 3px;
+  gap: 2px;
+}
+.vistaBtn {
+  padding: 5px 14px;
+  border: none;
+  border-radius: 16px;
+  background: transparent;
+  font-size: 12px;
+  cursor: pointer;
+  font-family: inherit;
+  color: #666;
+  transition: all 0.2s;
+}
+.vistaBtnOn {
+  background: white;
+  color: #222;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* ── CAL GRID ── */
+.calGrid {
+  width: 100%;
+}
+.calDiasHeader {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-bottom: 4px;
+}
+.calDiaLabel {
+  text-align: center;
+  font-size: 11px;
+  color: #aaa;
+  font-weight: 600;
+  padding: 4px 0;
+}
+.calSemana {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+.calCell {
+  text-align: center;
+  padding: 10px 4px;
+  font-size: 13px;
+  color: #333;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  border-radius: 8px;
+  transition: background 0.15s;
+}
+.calCell:hover { background: #fce8ef; }
+.calCellFuera  { color: #ccc; }
+.calCellFuera:hover { background: transparent; cursor: default; }
+.calCellHoy    { border: 1.5px solid #CA436E; }
+.calCellCita   { background: #fce8ef; }
+.calNum        { font-size: 13px; }
+.citaDot       { width: 5px; height: 5px; border-radius: 50%; background: #CA436E; }
+
+/* ── PRÓXIMAS CITAS ── */
+.proxSection { display: flex; flex-direction: column; gap: 10px; }
+.proxTitulo  { font-size: 15px; font-weight: 600; color: #222; margin: 0 0 6px; }
+.proxList    { display: flex; flex-direction: column; gap: 10px; }
+
+.citaCard {
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.citaHoraRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.citaHora {
+  font-size: 12px;
+  color: #888;
+}
+.citaHoy {
+  color: #CA436E;
+  font-weight: 600;
+}
+.citaPaciente {
+  font-size: 13px;
+  font-weight: 600;
+  color: #222;
+  margin: 0;
+}
+.citaTipoBadge {
+  background: #fce8ef;
+  color: #CA436E;
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 10px;
+  width: fit-content;
+}
+
+/* ── SOLICITUDES DE CITAS (gestantes) ── */
+.solicitudesSection {
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid #f0f0f0;
+}
+.solicitudesList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 320px;
+  overflow-y: auto;
+}
+.solicitudCard {
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 12px 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.solicitudInfo {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.solicitudActions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+/* ── ESTADO BADGES ── */
+.estadoBadge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 10px;
+  width: fit-content;
+}
+.estadoPendiente { background: #fff4e0; color: #b9770e; }
+.estadoConfirmada { background: #e6f7ec; color: #1a7f43; }
+.estadoCancelada { background: #fdecec; color: #dc2626; }
+
+.quickConfirmBtn {
+  background: #CA436E;
+  color: white;
+  border: none;
+  border-radius: 16px;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: opacity 0.2s;
+}
+.quickConfirmBtn:hover { opacity: 0.88; }
+
+.quickCancelBtn {
+  background: white;
+  color: #CA436E;
+  border: 1px solid #CA436E;
+  border-radius: 16px;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s;
+}
+.quickCancelBtn:hover { background: #fce8ef; }
+
+.quickConfirmBtn:disabled,
+.quickCancelBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

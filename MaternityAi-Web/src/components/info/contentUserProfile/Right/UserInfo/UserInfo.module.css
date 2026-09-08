@@ -1,0 +1,186 @@
+.containerInfo {
+  padding: 40px 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(223, 93, 134, 0.08);
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(10px);
+  animation: fadeIn 0.8s ease-out;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.containerInfo:hover {
+  box-shadow: 0 12px 40px rgba(223, 93, 134, 0.12);
+}
+
+.containerInfo h2 {
+  color: #df5d86;
+  font-size: 1.75rem;
+  margin-top: 0;
+  margin-bottom: 24px;
+  font-weight: 700;
+  animation: slideUp 0.6s ease-out backwards;
+  animation-delay: 0.1s;
+}
+
+.foto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: slideUp 0.6s ease-out backwards;
+  animation-delay: 0.2s;
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.fotoperfil {
+  color: #888;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+  display: inline-block;
+}
+
+.initialAvatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #df5d86 0%, #ff85a2 100%);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: bold;
+  box-shadow: 0 4px 15px rgba(223, 93, 134, 0.2);
+  margin-bottom: 16px;
+  transition: transform 0.2s ease;
+}
+
+.initialAvatar:hover {
+  transform: scale(1.05);
+}
+
+.photoButtons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.uploadBtn {
+  background: linear-gradient(135deg, #df5d86 0%, #ff85a2 100%);
+  color: white;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(223, 93, 134, 0.2);
+  transition: all 0.2s ease;
+}
+
+.uploadBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(223, 93, 134, 0.3);
+}
+
+.deleteBtn {
+  background: transparent;
+  color: #ff4d4d;
+  border: 1px solid #ffcdd2;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.deleteBtn:hover {
+  background: #ffebee;
+  border-color: #ff4d4d;
+}
+
+.data {
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  animation: slideUp 0.6s ease-out backwards;
+  animation-delay: 0.3s;
+}
+
+.infoField {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+.infoField label {
+  font-size: 0.8rem;
+  color: #888;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-align: left;
+}
+
+.infoField span {
+  display: flex;
+  align-items: center;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 12px 16px;
+  background-color: white;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  color: #333;
+  box-sizing: border-box;
+}
+
+.infoField span:hover {
+  border-color: #df5d86;
+  box-shadow: 0 2px 8px rgba(223, 93, 134, 0.05);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── GMI Code Badge ── */
+.gmiCode {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: linear-gradient(135deg, rgba(202,67,110,0.1), rgba(232,114,138,0.08));
+  border: 1px solid rgba(202,67,110,0.25);
+  border-radius: 10px;
+  padding: 8px 14px;
+  font-size: 13px;
+  color: #CA436E;
+  margin-bottom: 16px;
+  animation: slideUp 0.6s ease-out backwards;
+  animation-delay: 0.05s;
+}
+
+.gmiCode strong {
+  font-family: monospace;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}

@@ -1,0 +1,43 @@
+.mensaje {
+  & h1 {
+    font-family: 'Quicksand', sans-serif;
+    color: #ca436e;
+    margin-bottom: 0;
+    font-size: 32px;
+  }
+
+  & p {
+    font-family: 'Onest', sans-serif;
+    font-size: 18px;
+    color: rgb(83, 83, 83);
+    line-height: 1.5;
+  }
+
+  & h2 {
+    font-family: 'Quicksand', sans-serif;
+    margin-bottom: 0px;
+    color: #ca436e;
+  }
+}
+
+@media (max-width: 768px) {
+  .mensaje {
+    margin-bottom: 12px;
+  }
+
+  .mensaje h1 {
+    font-size: 24px;
+    line-height: 1.3;
+  }
+
+  .mensaje p {
+    font-size: 14px;
+    margin-top: 6px;
+    margin-bottom: 16px;
+  }
+
+  .mensaje h2 {
+    display: none;
+  }
+}
+

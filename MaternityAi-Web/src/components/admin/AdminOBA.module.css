@@ -1,0 +1,249 @@
+.root {
+  min-height: 100vh;
+  width: 100%;
+  background: #f5f5f5;
+  font-family: 'Segoe UI', sans-serif;
+  box-sizing: border-box;
+}
+
+/* ── GRID ── */
+.grid {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 14px;
+  padding: 20px 28px;
+  align-items: start;
+}
+
+/* ── PANELS ── */
+.panel {
+  background: white;
+  border-radius: 18px;
+  padding: 18px 16px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.panelScroll {
+  overflow-y: hidden;
+}
+.panelTitle {
+  color: #CA436E;
+  font-size: 17px;
+  font-weight: 600;
+  margin: 0 0 14px 0;
+}
+
+/* ── CATEGORÍAS ── */
+.catList {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.catItem {
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #444;
+  transition: background 0.15s;
+}
+.catItem:hover {
+  background: #f5f5f5;
+}
+.catItemSel {
+  background: #fce8ef;
+  color: #CA436E;
+  font-weight: 600;
+}
+
+/* ── CONTENT HEADER ── */
+.contentHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+.contentTitle {
+  color: #CA436E;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+}
+.newBtn {
+  background: #CA436E;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 9px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: opacity 0.2s;
+}
+.newBtn:hover {
+  opacity: 0.88;
+}
+
+/* ── OVA GRID ── */
+.obaGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+.emptyMsg {
+  font-size: 13px;
+  color: #aaa;
+  margin-top: 20px;
+}
+
+/* ── OVA CARD ── */
+.obaCard {
+  border: 1px solid #eee;
+  border-radius: 14px;
+  overflow: hidden;
+  background: white;
+  transition: box-shadow 0.2s;
+}
+.obaCard:hover {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+.imgWrap {
+  position: relative;
+}
+.img {
+  width: 100%;
+  height: 155px;
+  object-fit: cover;
+  display: block;
+}
+.badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 6px;
+  letter-spacing: 0.5px;
+}
+.playBtn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.42);
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── CARD BODY ── */
+.cardBody {
+  padding: 14px;
+}
+.cardTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: #222;
+  margin: 0 0 6px;
+}
+.cardDesc {
+  font-size: 12px;
+  color: #999;
+  margin: 0 0 12px;
+  line-height: 1.5;
+}
+.cardActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+.iconBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #bbb;
+  padding: 4px;
+  transition: color 0.15s;
+}
+.iconBtn:hover {
+  color: #CA436E;
+}
+
+/* ── PAGINATION ── */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+  padding-top: 14px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.pageBtn {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #555;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.pageBtn:hover:not(:disabled) {
+  border-color: #CA436E;
+  color: #CA436E;
+  background: #fdf5f7;
+}
+
+.pageBtn:disabled {
+  color: #ccc;
+  border-color: #eee;
+  cursor: not-allowed;
+}
+
+.pageNumbers {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pageNumberBtn {
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 600;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.pageNumberBtn:hover {
+  background: #f5f5f5;
+  color: #333;
+}
+
+.pageNumberBtnActive {
+  background: #CA436E;
+  color: white;
+  border-color: #CA436E;
+}

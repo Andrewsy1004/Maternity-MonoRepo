@@ -1,0 +1,19 @@
+.button { 
+        background : linear-gradient(90deg ,#FA6D9A , #F7B6C8 , #FF98B5);
+        border-radius: 20px;
+        border : none ;
+        font-size: 17px;
+        color : white;
+        margin-left: auto;
+        text-align: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+        
+}
+
+.button:hover {
+
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+
+}
+

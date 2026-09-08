@@ -1,0 +1,84 @@
+.background {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+@media (max-width: 1024px) {
+  .background {
+    display: none;
+  }
+}
+
+/* ---- Blobs difuminados ---- */
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.45;
+}
+
+.blobTopRight {
+  width: 420px;
+  height: 380px;
+  top: -80px;
+  right: -60px;
+  background: radial-gradient(circle, #f5b8c9 0%, #f0c8d8 40%, transparent 70%);
+  animation: driftA 18s ease-in-out infinite alternate;
+}
+
+.blobBottomCenter {
+  width: 480px;
+  height: 420px;
+  bottom: -100px;
+  left: 35%;
+  background: radial-gradient(circle, #f0a8c0 0%, #f8d0e0 45%, transparent 70%);
+  animation: driftB 22s ease-in-out infinite alternate;
+}
+
+.blobBottomRight {
+  width: 260px;
+  height: 240px;
+  bottom: 10%;
+  right: -40px;
+  background: radial-gradient(circle, #e898b8 0%, #f5c0d4 50%, transparent 70%);
+  animation: driftC 16s ease-in-out infinite alternate;
+}
+
+.blobMidLeft {
+  width: 200px;
+  height: 180px;
+  top: 35%;
+  left: -60px;
+  background: radial-gradient(circle, #f8c8d8 0%, transparent 65%);
+  animation: driftD 20s ease-in-out infinite alternate;
+}
+
+@keyframes driftA {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(-30px, 30px) scale(1.08); }
+}
+@keyframes driftB {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(40px, -25px) scale(1.05); }
+}
+@keyframes driftC {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(-20px, -35px) scale(1.1); }
+}
+@keyframes driftD {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(25px, 20px) scale(0.92); }
+}
+
+/* ---- SVG líneas ---- */
+.lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}

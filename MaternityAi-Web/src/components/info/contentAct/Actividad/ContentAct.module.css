@@ -1,0 +1,119 @@
+.container {
+  margin-top: 80px;
+  display: flex;
+  gap: 50px;
+  height: 730px;
+  animation: fadeIn 0.8s ease-out;
+
+  & .left {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    animation: slideInLeft 0.8s ease-out;
+
+    & .notificaciones {
+      padding: 20px 20px 20px 0;
+      overflow: auto;
+    }
+  }
+
+  & .right {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    height: 100%;
+    overflow: auto;
+    animation: slideUp 0.8s ease-out 0.2s backwards;
+  }
+
+  & .sms {
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+  }
+
+  & .title_notificaciones {
+    color: #ca436e;
+  }
+
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInLeft {
+  from { transform: translateX(-30px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.desktopView {
+  display: contents;
+}
+
+.mobileView {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mainWrapper {
+    background-color: #fffafb;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .desktopView {
+    display: none;
+  }
+
+  .mobileView {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    padding-bottom: 80px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    animation: fadeIn 0.5s ease;
+  }
+
+  .mobileHeader {
+    padding: 20px;
+  }
+
+  .mobileSectionTitle {
+    font-family: 'Quicksand', sans-serif;
+    color: #903c54;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 24px 20px 10px 20px;
+  }
+
+  .cuestionariosCarousel {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 15px;
+    padding: 10px 20px 18px 20px;
+    scrollbar-width: none;
+  }
+  
+  .cuestionariosCarousel::-webkit-scrollbar {
+    display: none;
+  }
+
+  .mobileSms {
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px 24px 20px;
+    gap: 12px;
+  }
+}

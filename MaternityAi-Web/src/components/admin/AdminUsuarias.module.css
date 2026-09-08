@@ -1,0 +1,616 @@
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.root {
+  min-height: 100vh;
+  width: 100%;
+  background: #f5f5f5;
+  font-family: 'Segoe UI', sans-serif;
+  box-sizing: border-box;
+}
+
+/* ── GRID ── */
+.grid {
+  display: grid;
+  grid-template-columns: 280px 1fr 250px;
+  gap: 14px;
+  padding: 20px 28px;
+  align-items: stretch;
+  height: calc(100vh - 100px);
+  box-sizing: border-box;
+}
+
+/* ── PANELS ── */
+.panel {
+  background: white;
+  border-radius: 18px;
+  padding: 18px 16px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-height: 0;
+}
+.panelScroll {
+  overflow-y: auto;
+}
+.panelTitle {
+  color: #CA436E;
+  font-size: 17px;
+  font-weight: 600;
+  margin: 0 0 12px 0;
+}
+
+/* ── SEARCH ── */
+.searchWrap {
+  position: relative;
+  margin-bottom: 12px;
+}
+.searchInput {
+  width: 100%;
+  padding: 7px 30px 7px 12px;
+  border-radius: 20px;
+  border: 1px solid #e0e0e0;
+  background: #f9f9f9;
+  font-size: 12px;
+  color: #555;
+  font-family: inherit;
+  outline: none;
+  box-sizing: border-box;
+}
+.searchIcon {
+  position: absolute;
+  right: 9px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* ── PACIENTE LIST ── */
+.pList {
+  overflow-y: auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.pItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid transparent;
+  animation: slideInLeft 0.5s ease-out backwards;
+}
+
+@keyframes slideInLeft {
+  from { transform: translateX(-10px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.pItem:hover {
+  background: #fff5f8;
+  transform: translateX(4px);
+  border-color: #fce8ef;
+}
+.pItemSel { 
+  background: #fce8ef;
+  border-color: #f9c0cf;
+}
+.pId         { font-weight: 600; font-size: 12px; color: #CA436E; min-width: 105px; }
+.pDetail     { font-size: 11px; color: #999; }
+
+/* ── CENTER DETAIL ── */
+.nombrePaciente {
+  font-size: 30px;
+  font-weight: 700;
+  color: #222;
+  margin: 0 0 6px;
+}
+.addPacienteBtn {
+  background: #CA436E;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.addPacienteBtn:hover {
+  background: #a33255;
+  transform: scale(1.05);
+}
+.diagnostico {
+  color: #CA436E;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  margin: 0 0 14px;
+}
+.infoRow {
+  font-size: 13px;
+  color: #444;
+  margin: 4px 0;
+}
+.sobrepeso {
+  color: #CA436E;
+  font-weight: 700;
+}
+.ipsText {
+  font-size: 13px;
+  color: #333;
+  margin: 12px 0 4px;
+}
+.emergenciaBtn {
+  background: none;
+  border: none;
+  color: #CA436E;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+  font-family: inherit;
+  margin-bottom: 20px;
+}
+.secTitle {
+  color: #CA436E;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 6px;
+}
+.secDesc {
+  font-size: 12px;
+  color: #999;
+  margin: 0 0 14px;
+  line-height: 1.5;
+}
+
+/* ── ANÁLISIS ── */
+.analisisBox {
+  border: 1px solid #eee;
+  border-radius: 14px;
+  padding: 16px;
+  position: relative;
+}
+.addBtn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+.analisisGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.analisisBtn {
+  padding: 11px;
+  border-radius: 25px;
+  border: none;
+  background: #e8e8e8;
+  color: #666;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.analisisBtn:hover {
+  transform: scale(1.05);
+  background: #f0f0f0;
+}
+
+.analisisBtnOn {
+  background: #CA436E;
+  color: white;
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(202, 67, 110, 0.3);
+}
+
+/* ── REPORTE ── */
+.reportePanel {
+  gap: 10px;
+}
+.alertaBtn {
+  background: #CA436E;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  transition: all 0.2s ease;
+}
+.alertaBtn:hover {
+  background: #b5355e;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(202, 67, 110, 0.2);
+}
+.cuestionarioBtn {
+  background: white;
+  color: #333;
+  border: 1px solid #e0e0e0;
+  border-radius: 20px;
+  padding: 10px 16px;
+  font-size: 13px;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  transition: all 0.2s ease;
+}
+.cuestionarioBtn:hover {
+  background: #fdfdfd;
+  border-color: #CA436E;
+  color: #CA436E;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+
+/* ── TABS ── */
+.tabContainer {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.tabBtn {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #e0e0e0;
+  background: #f9f9f9;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.tabBtnActive {
+  background: #CA436E;
+  color: white;
+  border-color: #CA436E;
+}
+
+/* ── FÓRMULA OBSTÉTRICA ── */
+.formulaContainer {
+  margin-top: 15px;
+  margin-bottom: 25px;
+  padding: 16px;
+  background: #fff8fa;
+  border: 1px solid #fce8ef;
+  border-radius: 14px;
+}
+
+.formulaHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.formulaHeader h3 {
+  margin: 0;
+  color: #CA436E;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.formulaGrid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+}
+
+.formulaItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  padding: 8px 4px;
+  border-radius: 10px;
+  border: 1px solid #feeef2;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+}
+
+.formulaCount {
+  font-size: 20px;
+  font-weight: 700;
+  color: #CA436E;
+}
+
+.formulaLabel {
+  font-size: 10px;
+  color: #666;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+.editBtn {
+  background: none;
+  border: none;
+  color: #CA436E;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+.editBtn:hover {
+  background: #fce8ef;
+}
+
+/* ── ANTECEDENTES PATOLÓGICOS ── */
+.antecedentesContainer {
+  margin-top: 15px;
+  margin-bottom: 25px;
+  padding: 16px;
+  background: #fcfcfc;
+  border: 1px solid #eee;
+  border-radius: 14px;
+}
+
+.antecedentesHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.antecedentesHeader h3 {
+  margin: 0;
+  color: #CA436E;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.antecedentesList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.antecedenteCard {
+  background: white;
+  border: 1px solid #f0f0f0;
+  border-radius: 10px;
+  padding: 12px;
+  position: relative;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+}
+
+.antecedenteTitleRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 6px;
+}
+
+.antecedenteTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.antecedenteBadges {
+  display: flex;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.badge {
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.badgeType {
+  background: #f3f4f6;
+  color: #4b5563;
+}
+
+.badgeControlled {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.badgeNotControlled {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.antecedenteDesc {
+  font-size: 12px;
+  color: #666;
+  margin: 6px 0 0 0;
+}
+
+.antecedenteMeta {
+  font-size: 11px;
+  color: #888;
+  margin-top: 8px;
+  display: flex;
+  gap: 12px;
+}
+
+.antecedenteActions {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  gap: 8px;
+}
+
+.actionIconBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.actionIconBtn:hover {
+  background: #f3f4f6;
+}
+
+/* ── FORM/INLINE STYLES ── */
+.inlineForm {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 14px;
+  margin-top: 10px;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.formField {
+  display: flex;
+  flex-direction: column;
+}
+
+.formFieldFull {
+  grid-column: span 2;
+}
+
+.formField label {
+  font-size: 11px;
+  color: #666;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.formField input,
+.formField select,
+.formField textarea {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  font-size: 12px;
+  outline: none;
+  font-family: inherit;
+}
+
+.formField textarea {
+  resize: vertical;
+  height: 60px;
+}
+
+.formActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.btnCancel {
+  padding: 5px 12px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  background: white;
+  color: #374151;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.btnSave {
+  padding: 5px 12px;
+  border-radius: 6px;
+  border: none;
+  background: #CA436E;
+  color: white;
+  font-size: 12px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* ── PAGINACIÓN LISTA MATERNAS ── */
+.paginacion {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #f0f0f0;
+}
+.paginacionBtn {
+  background: #f0f0f0;
+  color: #555;
+  border: none;
+  border-radius: 14px;
+  padding: 5px 10px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s;
+}
+.paginacionBtn:hover:not(:disabled) { background: #e6e6e6; }
+.paginacionBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.paginacionInfo {
+  font-size: 11px;
+  color: #888;
+  white-space: nowrap;
+}
+
+/* ── BOTONES DE EXPORTACIÓN ── */
+.exportBtn {
+  background: white;
+  color: #CA436E;
+  border: 1px solid #CA436E;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  flex: 1;
+}
+
+.exportBtn:hover:not(:disabled) {
+  background: #fff5f8;
+  transform: scale(1.03);
+}
+
+.exportBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

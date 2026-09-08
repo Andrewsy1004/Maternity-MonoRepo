@@ -1,0 +1,89 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  border: 1px solid rgba(226, 217, 221, 0.9);
+  border-radius: 16px;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 20px rgba(224, 164, 182, 0.15);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  & .tarjeta {
+    display: flex;
+    gap: 12px;
+    flex-direction: column;
+    width: 100%;
+
+    & h3 {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #652b41;
+      margin: 0 0 4px 0;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+    }
+  }
+
+  & .mis_datos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    gap: 10px;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+  }
+
+  & .datos {
+    border: 1px solid rgba(240, 230, 235, 0.8);
+    border-radius: 12px;
+    padding: 10px 12px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(202, 67, 110, 0.04);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 65px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(202, 67, 110, 0.08);
+      border-color: rgba(202, 67, 110, 0.25);
+    }
+
+    & h4 {
+      margin: 0 0 6px 0;
+      color: #ca436e;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      line-height: 1.2;
+    }
+
+    & p {
+      margin: 0;
+      display: flex;
+      align-items: baseline;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #3f2a36;
+      gap: 2px;
+
+      & span {
+        font-size: 0.75rem;
+        color: #8c7381;
+        font-weight: 500;
+      }
+    }
+
+    & .fechaValue {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #4a3742;
+    }
+  }
+}

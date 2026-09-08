@@ -1,0 +1,23 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: gmi_postgres
+    restart: unless-stopped
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: gmi
+      POSTGRES_PASSWORD: gmi_secret
+      POSTGRES_DB: gmi_db
+    volumes:
+      - gmi_postgres_data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7-alpine
+    container_name: gmi_redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+
+volumes:
+  gmi_postgres_data:

@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Onest:wght@400;500;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+html {
+  min-height: 100%;
+  background: #f5f5f5;
+}
+
+body {
+  font-family: 'Onest', sans-serif;
+  margin-left: 80px;
+  margin-top: 25px;
+  margin-right: 80px;
+  padding: 0;
+  min-height: 100%;
+  background: #f5f5f5;
+}
+
+@media (max-width: 768px) {
+  body {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+    padding-bottom: 80px;
+    background-color: #ffffff;
+  }
+  
+  html {
+    background: #ffffff;
+  }
+}

@@ -1,0 +1,132 @@
+.container {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  border-radius: 25px;
+  padding: 20px 30px 0px 30px;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+  }
+
+  & .nombre_notificacion {
+    color: #c0446b;
+    font-weight: bold;
+    background-color: #ffe8ee;
+    width: fit-content;
+    padding: 6px 10px;
+    border-radius: 20px;
+  }
+
+  & .title {
+    color: #b95575;
+  }
+
+  & .desc {
+    font-size: 18px;
+    color: rgb(73, 73, 73);
+    margin-bottom: 5px;
+  }
+
+  & .fecha {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: rgb(73, 73, 73);
+  }
+
+  & .nombre {
+    color: #e3658d;
+    font-weight: bold;
+  }
+
+  & img {
+    width: 90px;
+    height: 90px;
+    padding: 8px;
+    object-fit: contain;
+  }
+
+  /* Badge de alerta sobre el tag */
+  & .alert_badge {
+    display: inline-block;
+    color: #c05020;
+    font-weight: bold;
+    background-color: #fff0e8;
+    width: fit-content;
+    padding: 6px 10px;
+    border-radius: 20px;
+    border: 1px solid #f5c0a0;
+  }
+
+  & .semana {
+    font-size: 13px;
+    color: rgb(150, 150, 150);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    min-width: 290px;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    border: 1px solid #f3f4f6;
+    margin-bottom: 0;
+  }
+
+  .nombre_notificacion {
+    width: fit-content !important;
+    display: inline-block;
+    font-size: 11px;
+    padding: 4px 8px;
+    margin: 0 0 6px 0;
+  }
+
+  .alert_badge {
+    display: inline-block;
+    font-size: 11px;
+    padding: 4px 8px;
+    margin: 0 0 6px 0;
+  }
+
+  .title {
+    font-size: 15px;
+    margin: 4px 0;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+  }
+
+  .desc {
+    font-size: 13px;
+    line-height: 1.4;
+    margin-bottom: 8px;
+    color: #4b5563;
+  }
+
+  .semana {
+    font-size: 11px;
+  }
+
+  .fecha p {
+    font-size: 11px;
+    margin: 0;
+  }
+
+  .container img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    padding: 0;
+    border-radius: 8px;
+    flex-shrink: 0;
+  }
+}

@@ -1,0 +1,26 @@
+/* Toggle sutil para cambiar entre modo selector y texto libre */
+.toggleBtn {
+  align-self: flex-start;
+  margin-top: 2px;
+  font-size: 0.72rem;
+  color: #CA436E;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+  font-family: inherit;
+  line-height: 1.4;
+  opacity: 0.85;
+  transition: opacity 0.15s ease, color 0.15s ease;
+}
+
+.toggleBtn:hover:not(:disabled) {
+  opacity: 1;
+  color: #a33255;
+}
+
+.toggleBtn:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}

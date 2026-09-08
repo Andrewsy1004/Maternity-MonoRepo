@@ -1,0 +1,72 @@
+.bottomNav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  /* Matching the mockup which seems to have a thin border on top rather than rounded corners for the nav */
+  border-top: 1px solid #eee;
+}
+
+.navItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #999;
+  width: 50px;
+  height: 50px;
+  transition: all 0.3s ease;
+}
+
+.navItem.active {
+  color: #df5d86; /* Active state color matching theme */
+  animation: bounce 0.4s ease;
+}
+
+.icon {
+  width: 28px;
+  height: 28px;
+  stroke: currentColor;
+}
+
+.aiIconWrapper {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #fcd5e3, #df5d86);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(223, 93, 134, 0.3);
+  transition: all 0.3s ease;
+}
+
+.navItem.active .aiIconWrapper {
+  animation: bounceAi 0.5s ease;
+}
+
+.iconAi {
+  width: 24px;
+  height: 24px;
+  stroke: white;
+}
+
+@keyframes bounce {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+@keyframes bounceAi {
+  0% { transform: scale(1) translateY(0); }
+  50% { transform: scale(1.1) translateY(-4px); }
+  100% { transform: scale(1) translateY(0); }
+}

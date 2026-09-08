@@ -1,0 +1,163 @@
+.container {
+  display: flex;
+
+  & .left {
+    width: 50rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  /* Animating left side elements with a staggered delay */
+  & .left > div,
+  & .left > p,
+  & .left > button {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+
+  & .left > div {
+    animation-delay: 0.1s;
+  }
+  
+  & .left > p {
+    animation-delay: 0.3s;
+  }
+
+  & .left > button {
+    animation-delay: 0.5s;
+  }
+
+  & p {
+    width: 85%;
+    font-size: clamp(16px, 2.2vw, 24px);
+    color: #b3b3b3;
+    line-height: 1.6;
+    margin: 20px 0;
+  }
+
+  & button {
+    width: fit-content;
+    min-width: 180px;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 0 28px;
+    border-radius: 27px;
+    border: none;
+    font-size: clamp(15px, 1.8vw, 19px);
+    background-color: #df5d86;
+    color: white;
+    box-shadow: 1px 1px 7px rgb(122, 122, 122);
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth hover transition */
+  }
+
+  & button:hover {
+    box-shadow: 4px 4px 15px rgba(223, 93, 134, 0.5); /* Improved box-shadow color */
+    transform: translateY(-2px); /* Slight lift on hover */
+  }
+
+  & .foto {
+    animation: float 6s ease-in-out infinite; /* Gentle floating animation */
+  }
+}
+
+/* Keyframes for animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.titleWrapper {
+  width: 100%;
+}
+
+.mobileImageContainer {
+  display: none;
+}
+
+.desktopImageContainer {
+  display: block;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 15px;
+  }
+
+  .left {
+    width: 100% !important;
+    align-items: center;
+    text-align: center;
+  }
+
+  .titleWrapper {
+    width: 100% !important;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    transform: scale(0.7); /* Scale down the DegradedText component since it might not be easily resizable without touching it */
+    transform-origin: center;
+  }
+
+  .container p {
+    width: 100%;
+    font-size: 16px;
+    color: #999;
+    margin-bottom: 20px;
+  }
+
+  .desktopImageContainer {
+    display: none;
+  }
+
+  .mobileImageContainer {
+    display: block;
+    width: 100%;
+    max-width: 350px;
+    position: relative;
+    margin: 0 auto 20px auto;
+  }
+
+  .fotoMobile {
+    width: 100%;
+    height: auto;
+    display: block;
+    /* Difuminado en la parte de abajo */
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 95%);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 95%);
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .container button {
+    width: auto;
+    padding: 0 30px;
+    height: 50px;
+    font-size: 18px;
+    margin: 0 auto;
+    border-radius: 25px;
+  }
+}

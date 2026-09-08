@@ -1,0 +1,10 @@
+.icono {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(90deg, #ca436e, #f9c9d6);
+  border-radius: 999px;
+  padding: 2px;
+  height: 32px;
+  width: 32px;
+}

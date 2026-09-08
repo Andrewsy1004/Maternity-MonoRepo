@@ -1,0 +1,16 @@
+.reporte {
+  background: linear-gradient(90deg, #B9768B 27%, #CA436E 49%, #FF93B5 100%);
+  color: white;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  box-shadow: -4px 5px 10px rgb(218, 218, 218);
+  cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    background: linear-gradient(90deg, #CA436E 27%, #FF93B5 49%, #B9768B 100%);
+    box-shadow: -4px 5px 15px rgb(218, 218, 218);
+  }
+}

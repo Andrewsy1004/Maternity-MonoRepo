@@ -1,0 +1,168 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  animation: fadeIn 0.8s ease-out;
+
+  & img {
+    padding-left: 50px;
+    animation: slideInLeft 1s ease-out;
+  }
+
+  & h2 {
+    font-weight: normal;
+    font-size: 40px;
+    margin-top: 30px;
+    margin-bottom: 0;
+    color: #df5d86;
+  }
+
+  & p {
+    color: gray;
+  }
+
+  & .comenzar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+  }
+
+  & .parrafo {
+    padding: 0 10%;
+    text-align: center;
+  }
+  
+  & h2 {
+    text-align: center;
+  }
+
+  & .formulario {
+    width: 100%;
+    max-width: 350px;
+    margin: 20px auto 0;
+    animation: slideInRight 1s ease-out;
+    display: flex;
+    flex-direction: column;
+
+    & .boton {
+      display: flex;
+      justify-content: center;
+    }
+
+    & p {
+      padding-left: 15px;
+      margin-bottom: 0;
+    }
+    & input {
+      width: 100%;
+      box-sizing: border-box;
+      height: 45px;
+      margin-top: 8px;
+      padding-left: 15px;
+      font-size: 15px;
+      border-radius: 12px;
+      border: 2px solid rgb(224, 224, 224);
+      transition: all 0.3s ease;
+    }
+
+    & input:focus {
+      border-color: #df5d86;
+      box-shadow: 0 0 0 4px rgba(223, 93, 134, 0.1);
+      outline: none;
+      transform: translateY(-1px);
+    }
+
+    & .confirm {
+      & .register {
+        background-color: transparent;
+        border: none;
+        color: #df5d86;
+        cursor: pointer;
+        transition: opacity 0.2s;
+      }
+      & .register:hover {
+        opacity: 0.8;
+        text-decoration: underline;
+      }
+    }
+  }
+  & .lastbutton {
+    margin-top: 20px;
+    background-color: #df5d86;
+    color: white;
+    font-size: 16px;
+    border-radius: 30px;
+    width: 120px;
+    height: 45px;
+    border: none;
+    box-shadow: 2px 2px 5px rgb(158, 158, 158);
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  & .lastbutton:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(223, 93, 134, 0.4);
+  }
+
+  & .lastbutton:active {
+    transform: scale(0.95);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInLeft {
+  from { transform: translateX(-30px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(30px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+  }
+
+  .container img {
+    padding-left: 0;
+    width: 90%;
+    max-width: 350px;
+    margin-top: 20px;
+  }
+
+  .container .comenzar {
+    width: 100%;
+    padding: 0 15px;
+    box-sizing: border-box;
+  }
+  
+  .container h2 {
+    font-size: 36px;
+    margin-top: 10px;
+  }
+  
+  .container .parrafo {
+    padding: 0;
+    font-size: 14px;
+    margin-top: 8px;
+  }
+  
+  .container .formulario {
+    width: 100%;
+    max-width: none;
+  }
+  
+  .hideOnMobile {
+    display: none !important;
+  }
+}

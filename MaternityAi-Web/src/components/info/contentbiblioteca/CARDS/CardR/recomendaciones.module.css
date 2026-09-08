@@ -1,0 +1,68 @@
+.recomendaciones {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sideLabel {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: #ca436e;
+  margin: 0 0 2px 0;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.moduleHint {
+  font-size: 11px;
+  font-weight: 600;
+  color: #b05070;
+  margin: 0 0 4px 0;
+  opacity: 0.8;
+}
+
+.rec {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13px;
+  color: #4a2a38;
+  line-height: 1.55;
+  font-weight: 400;
+}
+
+.recDot {
+  flex-shrink: 0;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f08aaa, #ca436e);
+  margin-top: 5px;
+  box-shadow: 0 1px 4px rgba(202, 67, 110, 0.35);
+}
+
+.motivacional {
+  font-size: 12px;
+  color: #903c54;
+  font-style: italic;
+  margin: 4px 0 0 0;
+  line-height: 1.5;
+  border-top: 1px solid rgba(202, 67, 110, 0.12);
+  padding-top: 8px;
+}
+
+/* Skeleton loading */
+.skeletonLine {
+  height: 13px;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #f5e0e8 0%, #fce8f0 50%, #f5e0e8 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+  width: 100%;
+}
+
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}

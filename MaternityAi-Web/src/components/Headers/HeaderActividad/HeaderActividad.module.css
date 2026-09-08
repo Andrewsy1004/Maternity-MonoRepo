@@ -1,0 +1,176 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  & .logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  & nav {
+    display: flex;
+    gap: 10px;
+    background-color: #e2e0e0;
+    padding: 0;
+    border-radius: 40px;
+    box-shadow: 4px 4px 6px rgb(143, 143, 143);
+
+    & .tab, & .link {
+      text-decoration: none;
+      color: black;
+      display: flex;
+      align-items: center;
+      padding: 8px 25px;
+      border-radius: 40px;
+      transition: all 0.3s ease;
+      font-weight: 500;
+    }
+
+    & .activeTab {
+      background-color: white;
+      color: black !important;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    & .tab:not(.activeTab):hover,
+    & .link:hover {
+      background-color: rgba(255, 255, 255, 0.6);
+      color: black !important;
+      transform: translateY(-2px);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    }
+
+    & .activeTab:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  & .perfil {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    padding: 6px 16px;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+
+    &:hover {
+      background-color: rgba(202, 67, 110, 0.05);
+      border: 1px solid rgba(202, 67, 110, 0.2);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    }
+
+    & .name {
+      margin: 0%;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    
+    &:hover .name {
+      color: #ca436e;
+    }
+
+    & .desc {
+      margin: 0;
+      font-size: 12px;
+      color: gray;
+    }
+  }
+}
+
+.mobileNavWrapper {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .mobileNavWrapper {
+    display: block;
+  }
+  
+  .container nav {
+    display: none; /* Hide pill nav */
+  }
+  
+  .container .perfil {
+    display: none; /* Hide profile in header */
+  }
+  
+  .container button {
+    display: none; /* Hide logout button in header */
+  }
+  
+  .container {
+    justify-content: center; /* Center logo */
+    margin-bottom: 20px;
+  }
+
+  .hideOnMobileMain {
+    display: none !important;
+  }
+}
+
+.perfilSection {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  position: relative;
+}
+
+.bellBtn {
+  background: transparent;
+  border: 1px solid rgba(223, 93, 134, 0.2);
+  color: #555;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.bellBtn:hover, .bellActive {
+  background-color: rgba(223, 93, 134, 0.08);
+  border-color: #df5d86;
+  color: #df5d86;
+  transform: scale(1.05);
+}
+
+.alertsDropdown {
+  position: absolute;
+  top: 55px;
+  right: 0;
+  width: 350px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.03);
+  z-index: 10000;
+  max-height: 480px;
+  animation: slideDownIn 0.2s ease-out;
+}
+
+@keyframes slideDownIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.perfilNoClick {
+  cursor: default !important;
+  pointer-events: none;
+}
+
+
