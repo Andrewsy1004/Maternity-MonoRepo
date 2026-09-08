@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import type { PreguntaSegResponse, RespuestaItem } from '../../../../../services/clinicalService';
-import styles from './CuestionarioModal.module.css';
+import styles from './Cuestionariomodal.module.css';
 
 interface Props {
   questions: PreguntaSegResponse[];
